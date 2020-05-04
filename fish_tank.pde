@@ -25,20 +25,7 @@ var drawFish = function (centerX, centerY, colorB, bodyLength, bodyHeight, color
 
 
 };
-var drawHerringHelper = function (centerX, centerY) {
-  drawFish(centerX, centerY, color(87, 95, 148), -80, 12, color(8, 119, 204));
-};
-var drawHerring = function () {
-  //herrings   
-  drawHerringHelper(79, 340);
-  drawHerringHelper(53, 305);
-  drawHerringHelper(68, 267);
-  drawHerringHelper(87, 283);
-  drawHerringHelper(100, 321);
-  drawHerringHelper(62, 362);
-  drawHerringHelper(33, 328);
-  drawHerringHelper(124, 352);
-};
+
 var drawDifferentFish = function () {
   drawFish(195, 244, color(14, 235, 21), -30, 28, color(7, 84, 7));
   drawFish(95, 44, color(212, 82, 212), 120, 60, color(76, 7, 82));
