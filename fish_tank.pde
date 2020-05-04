@@ -6,22 +6,24 @@ var centerY = (81);
 var bodyLength = 114;
 var bodyHeight = 74;
 var bodyColor = color(212, 82, 212);
+var screenWidth = 800;
 
 var drawFish = function (centerX, centerY, colorB, bodyLength, bodyHeight, colorT) {
   noStroke();
   fill(colorB);
+  var newCenterX = screenWidth/400* centerX;
   // body
-  ellipse(centerX, centerY, bodyLength, bodyHeight);
+  ellipse(newCenterX, centerY, bodyLength, bodyHeight);
   // tail
   var tailWidth = bodyLength / 4;
   var tailHeight = bodyHeight / 2;
   fill(colorT);
-  triangle(centerX - bodyLength / 2, centerY,
-    centerX - bodyLength / 2 - tailWidth, centerY - tailHeight,
-    centerX - bodyLength / 2 - tailWidth, centerY + tailHeight);
+  triangle(newCenterX - bodyLength / 2, centerY,
+    newCenterX - bodyLength / 2 - tailWidth, centerY - tailHeight,
+    newCenterX - bodyLength / 2 - tailWidth, centerY + tailHeight);
   // eye
   fill(33, 33, 33);
-  ellipse(centerX + bodyLength / 4, centerY, bodyHeight / 5, bodyHeight / 5);
+  ellipse(newCenterX + bodyLength / 4, centerY, bodyHeight / 5, bodyHeight / 5);
 
 
 };
