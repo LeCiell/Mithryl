@@ -11,7 +11,7 @@ var screenWidth = 800;
 var drawFish = function (centerX, centerY, colorB, bodyLength, bodyHeight, colorT) {
   noStroke();
   fill(colorB);
-  var newCenterX = screenWidth/400* centerX;
+  var newCenterX = screenWidth / 400 * centerX;
   // body
   ellipse(newCenterX, centerY, bodyLength, bodyHeight);
   // tail
@@ -27,13 +27,24 @@ var drawFish = function (centerX, centerY, colorB, bodyLength, bodyHeight, color
 
 
 };
+var randomColor = function () {
+  return color(random(255), random(255), random(255));
+};
+var randomTailColor = function (otherColor) {
 
+  var newColor = randomColor();
+  if (otherColor === newColor) {
+    return randomColor();
+  } else { return newColor }
+
+};
 var drawDifferentFish = function () {
-  drawFish(195, 244, color(14, 235, 21), -30, 28, color(7, 84, 7));
+  var newColor = randomColor()
+  drawFish(195, 244, newColor, -30, 28, randomTailColor(newColor));
   drawFish(95, 44, color(212, 82, 212), 120, 60, color(76, 7, 82));
   drawFish(314, 250, color(207, 0, 93), 75, 46, color(0, 9, 10));
   drawFish(304, 345, color(13, 1, 13), -59, 90, color(87, 94, 94));
-  drawFish(194, 300, color(222, 237, 9), 90, 45, color(5179, 110, 7));
+  drawFish(194, 300, color(222, 237, 9), 90, 45, color(179, 110, 7));
   drawFish(120, 172, color(9, 232, 240), 135, 172, color(8, 195, 242));
   drawFish(278, 164, color(214, 76, 26), 57, 57, color(13, 181, 119));
   drawFish(334, 164, color(214, 76, 26), -55, 51, color(13, 181, 119));
@@ -88,11 +99,11 @@ var drawScene = function () {
 var bubbleSize = 6;
 var centreBX = (250);
 var centreBY = (350);
-draw = function () {
-  drawScene();
+/* draw = function () {
+ 
   stroke(5, 242, 230);
   noFill();
   ellipse(250, 345, bubbleSize, bubbleSize);
 };
-
-
+*/
+drawScene();
